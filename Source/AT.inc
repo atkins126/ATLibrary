@@ -24,6 +24,10 @@
     {$LEGACYIFEND ON}
   {$IFEND}
 
+  {$IF CompilerVersion >= 35.0}
+    {$DEFINE D11_AlexandriaAndUp}
+  {$IFEND}
+
   {$IF CompilerVersion >= 34.0}
     {$DEFINE D10_4SydneyAndUp}
   {$IFEND}
@@ -127,6 +131,10 @@
 
   {$IF Defined(MSWINDOWS) or Defined(MAXOS)}
     {$DEFINE MSWindowsOrMacOS}
+  {$IFEND}
+
+  {$IF Defined(ANDROID) or Defined(IOS)}
+    {$DEFINE MOBILE}
   {$IFEND}
 
 {$ELSE}
